@@ -1,33 +1,164 @@
 #output td, #output th {
-	border: 1px solid black;
-	padding: 0 0.5em 0 0.5em;
+	border: 1px solid #e0e0e0;
+	padding: 15px;
+	text-align: center;
+	font-size: 14px;
+	position: relative;
 }
 #output {
-	border-collapse: collapse;
+	border-collapse: separate;
+	border-spacing: 0;
+	width: 100%;
+	max-width: 800px;
+	margin: 20px 0;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+	overflow: hidden;
+	background: white;
+	flex: 1;
+	min-width: 500px;
+	margin: 0;
+}
+#output th {
+	background: linear-gradient(145deg, #2196F3, #1976D2);
+	color: white;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	border-bottom: 2px solid #1565C0;
 }
 #output tr td>div {
-    margin: 0.5em 0 0.5em 0;
+	margin: 0.5em 0;
 }
-#output tr td div div {
-    display: inline;
-    padding-left: 0.2em;
-    padding-right: 0.2em;
+#output tr td div div:not(.review-task) {
+	display: inline-block;
+	padding: 8px 12px;
+	margin: 3px;
+	border-radius: 6px;
+	background-color: #E3F2FD !important;
+	color: #1565C0 !important;
+	font-weight: 500;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	transition: all 0.2s ease;
 }
-#app {
-    margin-left: 2%;
-    margin-right: 2%;
+#output tr td div div[class^="c"] {
+	background-color: #FFF3E0;
+	color: #E65100;
+}
+#output tr td div div.review-task {
+	background-color: #FFF3E0 !important;
+	color: #E65100 !important;
+}
+#output tr td div div:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#output tbody tr:first-child th {
+	background: #F5F5F5;
+	color: #424242;
+	font-weight: 600;
+	border-bottom: 1px solid #E0E0E0;
+}
+#output tbody tr:nth-child(even) {
+	background-color: #FAFAFA;
+}
+.today {
+	background: #E8F5E9 !important;
+}
+.today::after {
+	content: '今日';
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	background: #4CAF50;
+	color: white;
+	padding: 3px 8px;
+	font-size: 12px;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#output td:hover {
+	background-color: #F5F5F5;
+	transition: background-color 0.2s ease;
 }
 .flex {
-    display: flex;
-    column-gap: 5%;
-    flex-flow: row wrap;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 30px;
+	flex-wrap: wrap;
+}
+#form {
+	width: 400px;
+	flex-shrink: 0;
+	position: static;
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #form th {
-    max-width: 8em;
+	text-align: right;
+	padding: 10px;
+	color: #333;
+	white-space: nowrap;
+	width: 1%;
 }
 #form input {
-    max-width: 12em;
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
 }
-#notes, #license {
-    max-width: 20em;
+#form input[type="checkbox"] {
+	width: auto;
+}
+#form table {
+	width: 100%;
+	border-collapse: collapse;
+}
+#form td {
+	padding: 5px;
+	width: 99%;
+}
+#form input[type="text"],
+#form input[type="number"],
+#form input[type="date"] {
+	width: 100%;
+	box-sizing: border-box;
+}
+#form button {
+	padding: 8px 16px;
+	background: #2196F3;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+#form button:hover {
+	background: #1976D2;
+}
+#form tr td[colspan="2"] th {
+	text-align: left;
+	padding: 15px 0 5px 0;
+	color: #666;
+	font-style: italic;
+}
+#app {
+	margin: 2% auto;
+	max-width: 1400px;
+	padding: 0 20px;
+}
+@media (max-width: 1400px) {
+	.flex {
+		flex-direction: column;
+	}
+	#form {
+		width: 100%;
+		max-width: 400px;
+		margin: 20px auto 0;
+	}
+	#output {
+		min-width: 0;
+		width: 100%;
+	}
 }

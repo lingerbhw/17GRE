@@ -1,4 +1,4 @@
-const defaultIntervals = [0, 1, 3, 7, 14, 29]
+const defaultIntervals = [1, 3, 7]
 const msPerDay = 24 * 60 * 60 * 1000
 const app = {
   mounted () {
@@ -35,10 +35,10 @@ const app = {
         today: false,
         monday: false,
         week: 'Sun',
-        title: '17天GRE单词背诵计划时间表',
-        prefix: 'L',
-        listTotal: 42,
-        listPerDay: 2,
+        title: '单词背诵计划时间表',
+        prefix: '单词',
+        listTotal: 100,
+        listPerDay: 1,
         reversed: false,
         colored: false,
         intervals: [],
